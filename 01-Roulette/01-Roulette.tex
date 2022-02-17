@@ -1,0 +1,63 @@
+\documentclass[addpoints]{exam}
+
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\firstpageheader{Informatica}{1° Assignment}{17 Febbraio 2022}
+\firstpagefootrule
+\firstpagefooter{}{Pagina \thepage\ di \numpages}{}
+\runningheadrule
+\runningheader{Informatica}{1° Assignment}{17 Febbraio 2022}
+\runningfootrule
+\runningfooter{}{Pagina \thepage\ di \numpages}{}
+
+\pointpoints{punto}{punti}
+
+\begin{document}
+    \section{Assignment}
+    Sei stato incaricato da un'azienda per sviluppare un software che permette a un massimo di 8 giocatori di giocare alla Roulette. Il software deve eseguire secondo il seguente ordine:
+    \begin{enumerate}
+        \item All'avvio, viene fatto inserire in input il numero di giocatori (max. 8) che intende partecipare al gioco e vengono caricati 1000 crediti virtuali a ogni giocatore partecipante;
+        \item Successivamente si inserisce tramite input il numero di turni che si intende giocare (min. 3);
+        \item A questo punto si fa immettere, per ogni giocatore, la scelta della propria puntata. Una volta scelto il numero da puntare, il giocatore inserisce il numero di crediti che intende puntare, naturalmente il giocatore non può puntare più di quello che ha.
+        \textbf{Attenzione}: al contrario della roulette classica, in questo assignment si può puntare \textbf{solo} sui numeri, questi vanno da 0 a 36.
+        \item Viene estratto il numero casualmente e mostrato a video, se uno dei giocatori ha indovinato, viene ritornato al giocatore il doppio dell'ammontare scommesso in quel turno.
+        \item A turno concluso, ci sono due "strade":
+        \begin{itemize}
+            \item se è l'ultimo turno: stampare a video il giocatore con più soldi e ritornare al menù di selezione del numero dei giocatori.
+            \item se non è l'ultimo turno: procedere nuovamente alla selezione per ogni utente della propria scommessa, fino a terminare i turni.
+        \end{itemize}
+    \end{enumerate}
+
+    \section{Consegna}
+    \label{consegna}
+    La consegna deve seguire in maniera rigida i seguenti punti:
+    \begin{itemize}
+        \item Chiamare il progetto di Code::Blocks \texttt{CognomeNome\_Assignment\_1};
+        \item Dovete effettuare lo zip del vostro progetto \textbf{SENZA I SEGUENTI FILE/CARTELLE} (altrimenti non sarò in grado di valutarlo): 
+        \begin{itemize}
+            \item la cartella \texttt{bin};
+            \item la cartella \texttt{obj};
+            \item i file con estensione \texttt{.depend};
+            \item i file con estensione \texttt{.layout}.
+        \end{itemize}
+        \item Rinominare lo zip con lo stesso nome del progetto \texttt{CognomeNome\_Assignment\_1};
+        \item Caricare lo zip su Classroom \textbf{PRIMA} della scadenza.
+    \end{itemize}
+
+    \clearpage
+    
+    \section{Valutazione}
+    La valutazione del progetto sarà effettuata assegnando punti secondo le seguenti categorie:
+    \begin{itemize}
+        \item Consegna effettuata secondo i termini previsti alla sezione \ref{consegna};
+        \item Il progetto compila correttamente e non ha warnings;
+        \item Il software esegue correttamente se l'utente inserisce come input i valori richiesti;
+        \item Il software esegue correttamente se l'utente, impazzendo, inserisce valori randomici ove c'è input;
+        \item Il software presenta funzioni e ulteriori file, scorporando dal main.cpp le operazioni chiave del programma. Naturalmente \textbf{senza} esagerare;
+        \item Il software è scritto in inglese (anche correggiuto), sono esenti gli output;
+        \item Il codice sorgente è ordinato e scritto bene.
+    \end{itemize}
+\end{document}
