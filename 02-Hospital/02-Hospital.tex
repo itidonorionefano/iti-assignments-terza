@@ -1,0 +1,62 @@
+\documentclass[addpoints]{exam}
+
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\firstpageheader{Informatica}{2° Assignment}{10 Marzo 2022}
+\firstpagefootrule
+\firstpagefooter{}{Pagina \thepage\ di \numpages}{}
+\runningheadrule
+\runningheader{Informatica}{2° Assignment}{10 Marzo 2022}
+\runningfootrule
+\runningfooter{}{Pagina \thepage\ di \numpages}{}
+
+\pointpoints{punto}{punti}
+
+\begin{document}
+    \section{Assignment}
+    Sei stato preso come dipendente all'ospedale e sei stato incaricato di scrivere un programma che permetta l'inserimento dei pazienti nel sistema.
+
+    Il software deve poter effettuare le seguenti operazioni:
+    \begin{enumerate}
+        \item All'avvio, viene presentato un menù che permette di svolgere le opeazioni descritte successivamente, siete liberi di scegliere come preferite i vari selettori del menù, se usare i numeri o i caratteri. Tuttavia il menù deve prevedere che alla selezione di 'q' deve uscire dall'applicazione;
+        \item Deve poter permettere l'inserimento di un paziente che contiene i seguenti dati: nome, cognome, codice fiscale, data di nascita, via di residenza e cap di residenza. Naturalmente l'inserimento di un paziente non vede la selezione di "dove" salvarlo all'interno di un array, dovete farlo automaticamente (abbiamo già visto come);
+        \item Ogni paziente ha assegnato un identificativo \textbf{UNICO}. Potete usare un intero che incrementa a ogni inserimento dell'utente (quindi qualcosa che l'utente non inserice, ma ci pensa il programma);
+        \item Deve poter cancellare un paziente dal sistema, create un sistema che permetta la ricerca e eliminazione per codice fiscale dell'utente;
+        \item Riciclando il sistema ricerca usato al punto precedente, utilizzatelo per la modifica.
+    \end{enumerate}
+
+    Vi consiglio vivamente di attendere la prossima settimana per svolgere le operazioni sui dati. Potete in questa settimana intanto svolgere tutta la parte di gestione del menù.
+
+    \section{Consegna}
+    \label{consegna}
+    La consegna deve seguire in maniera rigida i seguenti punti:
+    \begin{itemize}
+        \item Chiamare il progetto di Code::Blocks \texttt{CognomeNome\_Assignment\_1};
+        \item Dovete effettuare lo zip del vostro progetto \textbf{SENZA I SEGUENTI FILE/CARTELLE} (altrimenti non sarò in grado di valutarlo): 
+        \begin{itemize}
+            \item la cartella \texttt{bin};
+            \item la cartella \texttt{obj};
+            \item i file con estensione \texttt{.depend};
+            \item i file con estensione \texttt{.layout}.
+        \end{itemize}
+        \item Rinominare lo zip con lo stesso nome del progetto \texttt{CognomeNome\_Assignment\_1};
+        \item Caricare lo zip su Classroom \textbf{PRIMA} della scadenza.
+    \end{itemize}
+
+    \clearpage
+    
+    \section{Valutazione}
+    La valutazione del progetto sarà effettuata assegnando punti secondo le seguenti categorie:
+    \begin{itemize}
+        \item Consegna effettuata secondo i termini previsti alla sezione \ref{consegna};
+        \item Il progetto compila correttamente e non ha warnings;
+        \item Il software esegue correttamente se l'utente inserisce come input i valori richiesti;
+        \item Il software esegue correttamente se l'utente, impazzendo, inserisce valori randomici ove c'è input (sempre nel limite del: se chiedo un intero, inserirò un intero);
+        \item Il software presenta funzioni e ulteriori file, scorporando dal main.cpp le operazioni chiave del programma. Naturalmente \textbf{senza} esagerare;
+        \item Il software è scritto in inglese (anche correggiuto), sono esenti gli output;
+        \item Il codice sorgente è ordinato e scritto bene;
+    \end{itemize}
+\end{document}
