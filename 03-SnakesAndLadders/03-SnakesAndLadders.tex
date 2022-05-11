@@ -1,0 +1,97 @@
+\documentclass[addpoints]{exam}
+
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\firstpageheader{Informatica}{3° Assignment - Pagina \thepage\ di \numpages}{28 Aprile 2022}
+\runningheadrule
+\runningheader{Informatica}{3° Assignment - Pagina \thepage\ di \numpages}{28 Aprile 2022}
+\firstpagefooter{}{}{}
+\runningfooter{}{}{}
+
+\pointpoints{punto}{punti}
+
+\begin{document}
+    \section{Assignment}
+    É tempo di sviluppare un gioco, vediamo di sviluppare "il gioco dell'oca" (in inglese chiamato, appunto, Snakes and Ladders).
+
+    Il gioco dell'oca, per chi non lo sapesse, è un banale gioco con lancio di dado dove i personaggi si muovono nel tabellone in base al numero uscito con il lancio. Il tabellone non è altro che una lista di caselle già definite in partenza\footnotemark{} e, in base a quale casella raggiungono, possono: rimanere fermi, avanzare di un certo numero di caselle o tornare indietro. \footnotetext{Fino a quando non si vuole svolgere il punto bonus espresso nella sezione \ref{bonus_points}}
+
+    Il gioco, all'avvio, deve presentare un menù che permetta di:
+    \begin{itemize}
+        \item avviare la partita
+        \item modificare le impostazioni
+        \item chiudere il gioco
+    \end{itemize}
+
+    \subsection{Avvio e svolgimento del gioco}
+    \label{game_boot}
+    All'avvio, viene deciso l'ordine dei giocatori casualmente, iniziando la partita dalla casella zero. Il numero dei giocatori è descritto nella sezione \ref{settings}.
+
+    Ad ogni turno, al giocatore viene mostrato un piccolo disegno del tabellone e in quale casella attualmente si trova. Una volta che il giocatore preme "Invio" viene effettuato il lancio del dado, viene mostrato il numero uscito e viene notificato della casella sulla quale l'utente termina (quindi se è una casella che riporta l'utente indietro, se lo fa avanzare o se rimane fermo). A questo punto la pedina può venir mossa dal sistema degli spazi decisi nella casella.\footnote{Attenzione a non far successivamente muovere la pedina se la casella dove si finisce è una di quelle che ti sposta, potreste inavvertitamente creare loop infiniti.}
+    
+    Il gioco termina quando viene superato il numero di turni massimo (\ref{settings}) o quando una pedina raggiunge la fine del tabellone. \textbf{Attenzione:} per raggiungere la casella finale, è necessario far uscire con il lancio del dado, il numero preciso. Esempio: Se sono a 3 caselle dalla fine, raggiungo il traguardo solo se il numero estratto è 3. Nel caso esca un numero maggiore, devo far ritornare indietro la pedina del numero di caselle in più. In questo caso, se a 3 caselle il dado fa 5, la pedina sarà messa a 2 caselle dalla fine: $3-5 = -2$.
+
+    \subsection{Impostazioni}
+    \label{settings}
+    Nel menù dove vengono modificate le impostazioni, deve essere possibile: 
+    \begin{itemize}
+        \item modificare il numero dei giocatori (minimo 2 giocatori, scegliete voi i giocatori massimi)
+        \item modificare il numero di turni massimi dove, una volta superati, il gioco deve interrompersi e mostrare il giocatore che è arrivato più lontano
+    \end{itemize}
+
+    Fate attenzione che queste impostazioni devono essere già selezionate prima dell'avvio del gioco, quindi devono avere dei valori base, i quali poi possono essere modificabili dall'interfaccia.
+
+    \clearpage
+
+    \section{Consegna}
+    \label{consegna}
+    La consegna deve essere svolta entro e non oltre il \textbf{26/05/2022} e caricata su Google Classroom, a seguire i punti che si devono svolgere per rendere la consegna valida:
+    \begin{itemize}
+        \item Chiamare il progetto di Code::Blocks \texttt{CognomeNome\_Assignment\_3};
+        \item Dovete effettuare lo zip del vostro progetto \textbf{SENZA I SEGUENTI FILE/CARTELLE} (altrimenti non sarò in grado di valutarlo): 
+        \begin{itemize}
+            \item la cartella \texttt{bin};
+            \item la cartella \texttt{obj};
+            \item i file con estensione \texttt{.depend};
+            \item i file con estensione \texttt{.layout}.
+        \end{itemize}
+        \item Rinominare lo zip con lo stesso nome del progetto \texttt{CognomeNome\_Assignment\_3};
+        \item Caricare lo zip su Classroom \textbf{PRIMA} della scadenza.
+    \end{itemize}
+    
+    \section{Valutazione}
+    La valutazione del progetto sarà effettuata assegnando punti secondo le seguenti categorie:
+    \begin{itemize}
+        \item Consegna effettuata secondo i termini previsti alla sezione \ref{consegna};
+        \item Il progetto compila correttamente e non ha warnings;
+        \item Il software esegue correttamente se l'utente inserisce come input i valori richiesti;
+        \item Il software esegue correttamente se l'utente, impazzendo, inserisce valori randomici ove c'è input (sempre nel limite del: se chiedo un intero, inserirò un intero);
+        \item Il software presenta funzioni e ulteriori file, scorporando dal main.cpp le operazioni chiave del programma. Naturalmente \textbf{senza} esagerare;
+        \item Il software è scritto in inglese (anche correggiuto), sono esenti gli output;
+        \item Il codice sorgente è ordinato e scritto bene;
+    \end{itemize}
+
+    \begin{center}
+        \Large\textbf{Il voto massimo senza punti bonus è 7.}
+    \end{center}
+
+    \section{Punti Bonus}
+    \label{bonus_points}
+    I punti bonus servono a raggiungere il 10, consiglio vivamente che tutti svolgano almeno l'inizio di uno di questi punti:
+    \begin{itemize}
+        \item Rendere il campo di gioco dinamico:
+        \begin{itemize}
+            \item nella parte delle impostazioni, permettere di selezionare la lunghezza del tabellone;
+            \item è necessario che il software generi il tabellone ogni volta che inizia una partita, scegliete il 10\% delle caselle da occupare con bonus o malus. 
+        \end{itemize}
+        \item Salvare su file i vincitori di ogni partita:
+        \begin{itemize}
+            \item nel menù principale, mostrare una nuova entry che permetta di visualizzare i vincitori di ogni partita;
+            \item ogni volta che una partita finisce, scrivere su file la data e ora di gioco, seguite dal nome del vincitore.
+        \end{itemize}
+    \end{itemize}
+
+\end{document}
